@@ -1,0 +1,8 @@
+{
+    "sciezka_modelu:": "runs/detect/yolo_dataset_05/weights/best.pt",
+    "zbior_walidacyjny": "data/split/dataset_05/test",
+    "dokladnosc_odczytu_zdjec": "0.782",
+    "dokladnosc_odczytu_tablic": "0.777",
+    "sredni_czas_odczytu_zdjecia": "1.72s",
+    "calkowity_czas_ewaluacji": "1159.35s"
+}
