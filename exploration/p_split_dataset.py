@@ -54,7 +54,7 @@ def create_yaml_file(set_dir):
 ## FUNKCJA TWORZĄCA NOWY WYDZIELONY 
 def split_ds(test_dig, val_dig_1, val_dig_2):
     #Zbieranie nazwy elementów (zdjęć) zbioru macierzystego
-    #-> dzielenie go na podzbioru train_list, test_list, valid_list 
+    #-> dzielenie go na podzbiory train_list, test_list, valid_list 
     train_list, test_list, valid_list = balance_split_set(
         filefuncs.get_set_image_list(LOAD_SET_PATH), 
         test_dig, 
@@ -74,7 +74,7 @@ def split_ds(test_dig, val_dig_1, val_dig_2):
 
     # Tworzenie nowego katalogu zbioru wydzielonego
     split_set_count = len(os.listdir(SPLIT_SET_DIR_PATH))
-    new_split_set_name = f'dataset_{(split_set_count+1):02d}'
+    new_split_set_name = f'dataset_{(split_set_count):02d}'
     new_split_set_dir_path = os.path.join(SPLIT_SET_DIR_PATH, new_split_set_name)
     os.mkdir(new_split_set_dir_path)
 

@@ -1,3 +1,19 @@
+# Środowiska wirtualne
 .venv
 .venv-cpu
 .venv-gpu
+
+# Archiwum zbioru danych
+License Plate Recognition.v11i.yolov8 - roboflow.zip
+
+# Przeczyszczone podzbiory
+rbf_test_cleaned
+rbf_train_cleaned
+rbf_valid_cleaned
+
+# Podkatalog zbiorów badawczych
+data/split/*
+!data/split/.gitkeep
+
+#
+__pycache__/
