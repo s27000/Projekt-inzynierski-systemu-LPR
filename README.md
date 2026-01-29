@@ -1,8 +1,12 @@
 # Projekt-inzynierski-systemu-LPR
-Autor: Adam Bartkiewicz
-Nr Albumu: s27000
-Uczelnia: Polsko-Japońska Akademia Technik Komputerowych
-Tytuł pracy inżynierskiej: "Rozpoznawanie tablic rejestracyjnych pojazdów za pomocą sztucznej inteligencji"
+__Autor__: Adam Bartkiewicz
+
+__Nr Albumu:__ s27000
+
+__Uczelnia:__ Polsko-Japońska Akademia Technik Komputerowych
+
+__Tytuł pracy inżynierskiej:__ "Rozpoznawanie tablic rejestracyjnych pojazdów za pomocą sztucznej inteligencji"
+
 Wydział Informatyki, Katedra Systemów Inteligentnych i Data Science
 
 ## Wstęp do repozytorium
