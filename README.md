@@ -9,9 +9,9 @@
 ```
 .
 ├── data
-│   └── prepared
+│   ├── prepared
 │   │   └── rbf_cleaned_merged
-|   └── raw
+|   ├── raw
 │   │   └── CLP_roboflow
 │   
 ├── exploration
