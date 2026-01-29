@@ -9,8 +9,11 @@
 ```
 .
 ├── data
-│   └── 01_raw
-│       └── Used_Car_Price_Prediction.csv 
+│   └── prepared
+│   │   └── rbf_cleaned_merged
+|   └── raw
+│   │   └── CLP_roboflow
+│   
 ├── exploration
 │   ├── exploration.config
 │   ├── p_cv_operations_examples.py
