@@ -47,7 +47,7 @@ pip install -r requirements-gpu-second.txt
 ## Ważne! W przypadku środowiska GPU kolejność stosowania plików requirements jest istotna, i nie wolno jej zmieniać.
 ```
 
-## Struktury projektu
+## Struktura projektu
 ```
 .
 ├── data                    # KATALOG ZBIORÓW
