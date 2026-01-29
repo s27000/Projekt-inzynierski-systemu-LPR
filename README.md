@@ -10,7 +10,7 @@ __Tytuł pracy inżynierskiej:__ "Rozpoznawanie tablic rejestracyjnych pojazdów
 Wydział Informatyki, Katedra Systemów Inteligentnych i Data Science
 
 ## Wstęp do projektu
-Repozytorium przechowuje obszar roboczy części praktycznej pracy dyplomowej. Celem części praktycznej pracy było zrealizowanie systemy LPR, w oparciu o algorytmy sztucznej intelgencji. Repozytorium Zawiera popronowaną implementację systemu LPR, wykorzystująca przygotowane algorytmy oraz modele w innych bibliotekach. Zawiera programy które były wykorzystywane do utworzenia tego systemu oraz takie które sprawdzały jego działanie oraz skuteczność. Zawiera również zbiór danych pobrany z źródła, oraz jego kluczowe iteracje które zostały przygotowane na potrzebę realizacji celu badawczego. Opis kluczowych elementów repozytorium znajduje się poniżej, pod nagłówkiem struktury projektu.
+Repozytorium przechowuje obszar roboczy części praktycznej pracy dyplomowej. Celem części praktycznej pracy było zrealizowaniem systemy LPR, w oparciu o algorytmy sztucznej intelgencji. Repozytorium Zawiera popronowaną implementację systemu LPR, wykorzystująca przygotowane algorytmy oraz modele znajdujących się w innych bibliotekach. Zawiera programy które były wykorzystywane do utworzenia tego systemu oraz takie które sprawdzały jego działanie oraz skuteczność. Zawiera również zbiór danych pobrany z źródła, oraz jego iteracje które zostały przygotowane na potrzebę realizacji celu badawczego. Opis kluczowych elementów repozytorium znajduje się poniżej, pod nagłówkiem struktury projektu.
 
 ## Źródło zbioru danych:
 Roboflow Universe
