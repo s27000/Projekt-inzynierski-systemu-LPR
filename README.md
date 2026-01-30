@@ -63,14 +63,31 @@ pip install -r requirements-gpu-second.txt
 │       ├── test_1                    # Zbiór testowy
 │       ├── test_1_1                  # Podzbiór zbioru testowego 1
 │       └── test_2                    # Zbiór testowy 2
-|
+│
+├── evaluation                 # MODUŁ PRZEGLĄDANIA ROZWIĄZAŃ I MODFYKOWANIA ZBIORU DANYCH
+│   ├── results                       # Katalog przechowujący wyniki programu ewaluacyjnego
+│   │
+|   ├── evaluation.config             # Plik ustawień programu ewaluacyjnego
+│   └── p_evaluate_set.py             # Program ewaluacyjny, sprawdzający skutczeność proponowanego systemu LPR
+│  
 ├── exploration                 # MODUŁ PRZEGLĄDANIA ROZWIĄZAŃ I MODFYKOWANIA ZBIORU DANYCH
 │   ├── exploration.config            # Plik ustawień programów katalogu 'exploration'
-│   ├── p_cv_operations_examples.py   
-│   ├── p_cv_process_demo.py
-│   ├── p_cv_dataset_modifier.py      
+│   ├── p_cv_operations_examples.py   # Program eksperymentujący z ustawieniami operacji wizji maszynowej
+│   ├── p_cv_process_demo.py          # Program przedstawiający kombinację operacji wizji maszynowych, wykorzystanych w zapropowanym systemie LPR 
+│   ├── p_cv_dataset_modifier.py      # Program zaprojektowany do czyszczenia zbioru, oraz przypisywania tablicą na obrazach elementów numeru rejestracyjnego
 │   └── p_split_dataset.py            # Program generujący podzbiory badawcze
 │
+├── funcs                       # PAKIET Z POGRUPOWANYMI FUNKCJAMI
+│   ├── file_funcs                    # Pogrupowane metody operujące na plikach
+│   ├── img_browser                   # Klasa obiektów służacych do przeglądania plików
+│   ├── img_funcs                     # Pogrupowane metody operujące na obrazach
+│   └── lpr_funcs                     # (KLUCZOWY PLIK DLA CAŁEGO REPOZYTORIUM) Pogrupowane metody zaproponowanego systemu LPR
+│
+├── modelling                   # MODUŁ SPORZĄDZAJĄCY MODEL YOLO
+│   ├── modelling.config              # Plik ustawień programów katalogu 'modelling'
+│   ├── p_cuda_check.py               # Program sprawdzający możliwość modelowania, przy pomocy karty graficznej
+│   └── p_yolo_model.py               # Program trenujący model yolo
+|
 ├── main_app.config
 ├── main_app.py
 │
@@ -78,7 +95,7 @@ pip install -r requirements-gpu-second.txt
 ├── requirements-gpu-first.txt        # Pierwsza część listy pakietów dla środowiska CPU
 ├── requirements-gpu-second.txt       # Druga część listy pakietów dla środowiska CPU
 │
-├── yolo11n.pt
-├── yolo8n.pt
-└── yolo8s.pt
+├── yolo11n.pt                        # Pobrany szablon modelu YOLOv11n
+├── yolo8n.pt                         # Pobrany szablon modelu YOLOv8n
+└── yolo8s.pt                         # Pobrany szablon modelu YOLOv8S
 ```
