@@ -9,10 +9,19 @@ __Tytuł pracy inżynierskiej:__ "Rozpoznawanie tablic rejestracyjnych pojazdów
 
 Wydział Informatyki, Katedra Systemów Inteligentnych i Data Science
 
-## Wstęp do projektu
+## Streszczenie projektu
+Repozytorium przechowuje obszar roboczy części praktycznej pracy dyplomowej. Celem części praktycznej pracy było zrealizowaniem systemy LPR, w oparciu o algorytmy sztucznej intelgencji. Repozytorium Zawiera popronowaną implementację systemu LPR, wykorzystująca przygotowane algorytmy oraz modele znajdujących się w innych bibliotekach. Zawiera programy które były wykorzystywane do utworzenia tego systemu oraz takie które sprawdzały jego działanie oraz skuteczność. Zawiera również zbiór danych pobrany z źródła, oraz jego iteracje które zostały przygotowane na potrzebę realizacji celu badawczego. Opis kluczowych elementów repozytorium znajduje się poniżej, pod nagłówkiem struktury projektu.
 
-## Opis elementów projektu
-### Przygotowanie środowiska
+## Źródło zbioru danych:
+Roboflow Universe
+
+__License Plate Recognition Computer Vision Model__
+
+https://universe.roboflow.com/roboflow-universe-projects/license-plate-recognition-rxg4e
+
+_Zbiór został pobrany i znajduje się w katalogu CLP_roboflow_
+
+## Przygotowanie środowiska
 Aby uruchomić projekt, należy przygotować środowisko wirtualne języka python w wersji 3.13.5
 
 Więcej szczegółów na ten temat: https://docs.python.org/3/library/venv.html
@@ -37,38 +46,63 @@ pip install -r requirements-gpu-second.txt
 
 ## Ważne! W przypadku środowiska GPU kolejność stosowania plików requirements jest istotna, i nie wolno jej zmieniać.
 ```
-### Moduły
-Programy stosowane w badaniach lub wykorzystujące funkcje systemu LPR, zostały podzielone na moduły. Każdy z modułów ma swój wyznaczony katalog.
-
-__exploration__: przygotowanie rozwiązania oraz działania na zbiorze danych
-- __exploration.config__: plik ustawień dla wszystkich programów w module
-- __p_split_dataset.py__: program generujący 5 zbiorów badawczych. Aby program zadziałał prawidłowo, należy przygotować
-katalog zawierający podkatalog 'images' (z zdjęciami), 'labels' (z obiektami yolo) oraz 'details (dodatkowe szczegóły obiektów yolo). Program tworzy 5 wymieszanych zbiorów badawczych, z 3 podzbiorami: train, valid i test. Wymieszanie elementów zbiorów badawczych opiera się na sekwencyjnym podziale elementów pierwotnego zbioru. Ścieżka do zbioru z którego program ma wytworzyć zbiory badawcze należy ustawić w exploration.config. W tym samym miejscu należy zdefinować ścieżkę katalog, w którym zbiory mają zostać wygenerowane.
 
 ## Struktura projektu
 ```
 .
-├── data
-│   ├── prepared
-│   │   └── rbf_cleaned_merged
-|   ├── raw
-│   │   └── CLP_roboflow
-│   
-├── exploration
-│   ├── exploration.config
-│   ├── p_cv_operations_examples.py
-│   ├── p_cv_process_demo.py
-│   ├── p_cv_dataset_modifier.py  
+├── data                    # KATALOG ZBIORÓW
+│   ├── prepared                # PODKATALOG ZBIORÓW PRZECZYSZCZONYCH/PRZYGOTOWANYCH
+│   │   └── rbf_cleaned_merged        # Przeczyszczony wariant zbioru danych pobranego z źródła
+│   │ 
+|   ├── raw                     # PODKATALOG ZBIORÓW NIEZMIENONYCH
+│   │   └── CLP_roboflow              # Zbiór pobrany z repozytorium Roboflow
+│   │
+|   ├── split                   # PODKATALOG ZBIORÓW BADAWCZYCH
+│   │
+|   └── test                    # PODKATALOG ZBIORÓW TESTOWYCH
+│       ├── test_1                    # Zbiór testowy
+│       ├── test_1_1                  # Podzbiór zbioru testowego 1
+│       └── test_2                    # Zbiór testowy 2
+│
+├── evaluation                 # MODUŁ PRZEGLĄDANIA ROZWIĄZAŃ I MODFYKOWANIA ZBIORU DANYCH
+│   ├── results                       # Katalog przechowujący wyniki programu ewaluacyjnego
+│   │
+|   ├── evaluation.config             # Plik ustawień programu ewaluacyjnego
+│   └── p_evaluate_set.py             # Program ewaluacyjny, sprawdzający skutczeność proponowanego systemu LPR
+│  
+├── exploration                 # MODUŁ PRZEGLĄDANIA ROZWIĄZAŃ I MODFYKOWANIA ZBIORU DANYCH
+│   ├── exploration.config            # Plik ustawień programów katalogu 'exploration'
+│   ├── p_cv_operations_examples.py   # Program eksperymentujący z ustawieniami operacji wizji maszynowej
+│   ├── p_cv_process_demo.py          # Program przedstawiający kombinację operacji wizji maszynowych, wykorzystanych w zapropowanym systemie LPR 
+│   ├── p_cv_dataset_modifier.py      # Program zaprojektowany do czyszczenia zbioru, oraz przypisywania tablicą na obrazach elementów numeru rejestracyjnego
 │   └── p_split_dataset.py            # Program generujący podzbiory badawcze
 │
-├── main_app.config
-├── main_app.py
+├── funcs                       # PAKIET Z POGRUPOWANYMI FUNKCJAMI
+│   ├── file_funcs                    # Pogrupowane metody operujące na plikach
+│   ├── img_browser                   # Klasa obiektów służacych do przeglądania plików
+│   ├── img_funcs                     # Pogrupowane metody operujące na obrazach
+│   └── lpr_funcs                     # (KLUCZOWY PLIK DLA CAŁEGO REPOZYTORIUM) Pogrupowane metody zaproponowanego systemu LPR
+│
+├── gui                         # PAKIET Z POGRUPOWANYMI PANELAMI GUI
+│   ├── img_reviewer.py               # Okno przeglądania wyników oraz działanie zaproponwanego systemu LPR
+│   ├── load_app.py                   # Okno ładowania aplikacji
+│   └── main_menu.py                  # Okno menu głównego aplikacji
+│
+├── modelling                   # MODUŁ SPORZĄDZAJĄCY MODEL YOLO
+│   ├── modelling.config              # Plik ustawień programów katalogu 'modelling'
+│   ├── p_cuda_check.py               # Program sprawdzający możliwość modelowania, przy pomocy karty graficznej
+│   └── p_yolo_model.py               # Program trenujący model yolo
+│
+├── runs/detect                       # KATALOG PRZECHOWUJĄCY WYNIKI TRENINGU MODELI YOLO, WRAZ Z ICH OSTATECZNĄ STRUKTURĄ
+│
+├── main_app.config                   # Plik konfigurujący programu 'main_app'
+├── main_app.py                       # Program uruchmiający interfejs użytkownika
 │
 ├── requirements-cpu.txt              # Lista pakietów dla środowiska CPU
 ├── requirements-gpu-first.txt        # Pierwsza część listy pakietów dla środowiska CPU
 ├── requirements-gpu-second.txt       # Druga część listy pakietów dla środowiska CPU
 │
-├── yolo11n.pt
-├── yolo8n.pt
-└── yolo8s.pt
+├── yolo11n.pt                        # Pobrany szablon modelu YOLOv11n
+├── yolo8n.pt                         # Pobrany szablon modelu YOLOv8n
+└── yolo8s.pt                         # Pobrany szablon modelu YOLOv8S
 ```
