@@ -83,13 +83,20 @@ pip install -r requirements-gpu-second.txt
 │   ├── img_funcs                     # Pogrupowane metody operujące na obrazach
 │   └── lpr_funcs                     # (KLUCZOWY PLIK DLA CAŁEGO REPOZYTORIUM) Pogrupowane metody zaproponowanego systemu LPR
 │
+├── gui                         # PAKIET Z POGRUPOWANYMI PANELAMI GUI
+│   ├── img_reviewer.py               # Okno przeglądania wyników oraz działanie zaproponwanego systemu LPR
+│   ├── load_app.py                   # Okno ładowania aplikacji
+│   └── main_menu.py                  # Okno menu głównego aplikacji
+│
 ├── modelling                   # MODUŁ SPORZĄDZAJĄCY MODEL YOLO
 │   ├── modelling.config              # Plik ustawień programów katalogu 'modelling'
 │   ├── p_cuda_check.py               # Program sprawdzający możliwość modelowania, przy pomocy karty graficznej
 │   └── p_yolo_model.py               # Program trenujący model yolo
-|
-├── main_app.config
-├── main_app.py
+│
+├── runs/detect                       # KATALOG PRZECHOWUJĄCY WYNIKI TRENINGU MODELI YOLO, WRAZ Z ICH OSTATECZNĄ STRUKTURĄ
+│
+├── main_app.config                   # Plik konfigurujący programu 'main_app'
+├── main_app.py                       # Program uruchmiający interfejs użytkownika
 │
 ├── requirements-cpu.txt              # Lista pakietów dla środowiska CPU
 ├── requirements-gpu-first.txt        # Pierwsza część listy pakietów dla środowiska CPU
