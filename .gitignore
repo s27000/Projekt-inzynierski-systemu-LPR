@@ -6,14 +6,32 @@
 # Archiwum zbioru danych
 License Plate Recognition.v11i.yolov8 - roboflow.zip
 
-# Przeczyszczone podzbiory
-rbf_test_cleaned
-rbf_train_cleaned
-rbf_valid_cleaned
+# Przeczyszczone zbiory
+data/prepared/*
+!data/prepared/rbf_cleaned_merged
+!data/prepared/test_ds
+
+# Wyniki ewaluacji
+evaluation/results/*
+!evaluation/results/results_log_20260109_194222374.json
+!evaluation/results/results_log_20260109_200547277.json
+!evaluation/results/results_log_20260109_202524080.json
+!evaluation/results/results_log_20260109_204508080.json
+!evaluation/results/results_log_20260109_210436581.json
+
+# Modele YOLO
+runs/detect/*
+!run/detect/yolo_dataset_01
+!run/detect/yolo_dataset_02
+!run/detect/yolo_dataset_03
+!run/detect/yolo_dataset_04
+!run/detect/yolo_dataset_05
+!run/detect/yolo_test_run
+!run/detect/yolo_test_run2
 
 # Podkatalog zbiorów badawczych
 data/split/*
 !data/split/.gitkeep
 
-#
+# Inne 
 __pycache__/
